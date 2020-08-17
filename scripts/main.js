@@ -8,3 +8,17 @@ let mySrc = myImage.getAttribute('src');
 	myImage.setAttribute('src','images/firefox-icon.jpeg')
 	}
 }
+
+let myHeading = document.querySelector('h1');
+let myButton = document.querySelector('button');
+function setUserName(){
+	let myName = prompt('please enter your name');
+	localStorage.setItem('name',myName);
+	myHeading.textContent = 'Mozilla is cool, ' + myName;
+}
+if(!localStorage.getItem('name')){
+	setUserName();
+}else{
+	let storedName = localStorage.getItem('name');
+	myHeading.textContent = 'mozilla is cool , ' + storedName;
+}

@@ -11,10 +11,14 @@ let mySrc = myImage.getAttribute('src');
 
 let myHeading = document.querySelector('h1');
 let myButton = document.querySelector('button');
-function setUserName(){
+ function setUserName(){
 	let myName = prompt('please enter your name');
+	if(!myName){
+		setUserName();
+}else{
 	localStorage.setItem('name',myName);
 	myHeading.textContent = 'Mozilla is cool, ' + myName;
+}
 }
 if(!localStorage.getItem('name')){
 	setUserName();
